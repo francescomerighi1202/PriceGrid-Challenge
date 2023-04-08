@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap');
+
+*, *::after, *::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --cyan: hsl(179, 62%, 43%);
+    --bright-yellow: hsl(71, 73%, 54%);
+
+    --light-gray: hsl(204, 43%, 93%);
+    --grayish-blue: hsl(218, 22%, 67%);
+
+    --fs: 16px;
+    --ff: 'Karla', sans-serif;
+    --fw-400: 400;
+    --fw-700: 700;
+}
+
+body {
+    display: grid;
+    place-content: center;
+    min-height: 100vh;
+    padding: 2em;
+    font-family: var(--ff);
+    background-color: var(--light-gray);
+}
+
+.card {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 700px;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+}
+
+.primary {
+    grid-column: span 2;
+    background-color: white;
+    border-radius: 15px 15px 0 0;   
+}
+
+.col, .primary {
+    padding: 2em;
+}
+
+.bg--darker {
+    background-color: var(--cyan);
+    border-radius: 0 0 0 15px;
+}
+
+.bg--lighter {
+    background-color: hsla(179, 62%, 43%, 0.827);
+    border-radius: 0 0 15px 0;
+}
+
+.bg--lighter p {
+    opacity: .75;
+}
+
+.card__title {
+    color: var(--cyan);
+    font-weight: var(--fw-700);
+}
+
+.card__subtitle {
+    color: var(--bright-yellow);
+    margin-top: 1.5em;
+}
+
+.card__text {
+    color: var(--grayish-blue);
+    margin-top: 1em;
+}
+
+.col__title {
+    color: var(--light-gray);
+}
+
+.col__text {
+    margin-top: 1em;
+    color: var(--light-gray);
+}
+
+.price {
+    display: flex;
+    margin-top: 1em;
+    align-items: center;
+}
+
+.price__text {
+    margin-left: 1em;
+    color: var(--light-gray);
+    opacity: .75;
+}
+
+.price__span {
+    color: white;
+    font-weight: var(--fw-700);
+    font-size: 2rem;
+}
+
+.col__link {
+    display: block;
+    text-align: center;
+    margin-top: 2em;
+    background-color: var(--bright-yellow);
+    padding: 1em;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 600px) {
+
+    .card {
+        grid-template-columns: 1fr;
+    }
+
+    .primary {
+        grid-column: span 1;
+    }
+
+    .bg--darker {
+        border-radius: 0;
+    }
+
+    .bg--lighter {
+        border-radius: 0 0 15px 15px;
+    }
+
+}
